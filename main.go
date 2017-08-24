@@ -11,8 +11,11 @@ import (
 
 func main() {
 	flag.Parse()
-
 	args := flag.Args()
+
+	if len(args) == 0 {
+		return
+	}
 
 	tm.Clear()
 
@@ -24,15 +27,19 @@ func main() {
 	tm.Flush()
 
 	for {
-		tm.MoveCursor(1, 1)
-
 		output, err = exec.Command(args[0], args[1:]...).CombinedOutput()
 		if err != nil {
 			log.Fatal(err)
 		}
 
-		tm.Print(time.Now().Format(time.RFC1123) + "\n" + string(output))
+		// clear screen
+		tm.MoveCursor(1, 1)
+		tm.Print("")
+		tm.Flush()
 
+		// print output
+		tm.MoveCursor(1, 1)
+		tm.Print(string(output))
 		tm.Flush()
 
 		time.Sleep(time.Second)
