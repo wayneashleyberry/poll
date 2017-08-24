@@ -22,7 +22,7 @@ func main() {
 	var output []byte
 	var err error
 
-	tm.MoveCursor(1, 1)
+	tm.MoveCursor(0, 0)
 	tm.Print("")
 	tm.Flush()
 
@@ -33,13 +33,13 @@ func main() {
 		}
 
 		// clear screen
-		tm.MoveCursor(1, 1)
+		tm.MoveCursor(0, 0)
 		tm.Print("")
 		tm.Flush()
 
 		// print output
-		tm.MoveCursor(1, 1)
 		tm.Print(string(output))
+		tm.MoveCursor(0, 0)
 		tm.Flush()
 
 		time.Sleep(time.Second)
