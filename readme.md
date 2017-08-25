@@ -12,6 +12,12 @@ go get github.com/wayneashleyberry/poll
 ### Usage
 
 ```
+poll [flags] [command]
+```
+
+#### Examples
+
+```
 poll kubectl get pods
 ```
 
