@@ -23,3 +23,7 @@ work.
 ```sh
 poll -i 10s date
 ```
+
+```sh
+poll -i 50ms date +%s%3N
+```
