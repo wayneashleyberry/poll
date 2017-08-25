@@ -3,7 +3,23 @@
 
 > A stupid command-line application to poll other command-line applications.
 
+### Installation
+
 ```sh
 go get github.com/wayneashleyberry/poll
+```
+
+### Usage
+
+```
 poll kubectl get pods
+```
+
+The default polling interval is `1s`, you can change this with a flag. Any
+format supported by the
+[time.ParseDuration](https://golang.org/pkg/time/#ParseDuration) method will
+work.
+
+```sh
+poll -i 10s date
 ```
