@@ -2,29 +2,33 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"log"
 	"os/exec"
 	"time"
 
-	tm "github.com/buger/goterm"
+	"github.com/gosuri/uilive"
 )
 
 func main() {
+	i := flag.String("i", "1s", "polling interval")
 	flag.Parse()
+
+	duration, err := time.ParseDuration(*i)
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	args := flag.Args()
 
 	if len(args) == 0 {
 		return
 	}
 
-	tm.Clear()
-
 	var output []byte
-	var err error
 
-	tm.MoveCursor(0, 0)
-	tm.Print("")
-	tm.Flush()
+	writer := uilive.New()
+	writer.Start()
 
 	for {
 		output, err = exec.Command(args[0], args[1:]...).CombinedOutput()
@@ -32,16 +36,7 @@ func main() {
 			log.Fatal(err)
 		}
 
-		// clear screen
-		tm.MoveCursor(0, 0)
-		tm.Print("")
-		tm.Flush()
-
-		// print output
-		tm.Print(string(output))
-		tm.MoveCursor(0, 0)
-		tm.Flush()
-
-		time.Sleep(time.Second)
+		fmt.Fprintf(writer, string(output))
+		time.Sleep(duration)
 	}
 }

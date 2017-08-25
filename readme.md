@@ -7,3 +7,12 @@
 go get github.com/wayneashleyberry/poll
 poll kubectl get pods
 ```
+
+The default polling interval is `1s`, you can change this with a flag. Any
+format supported by the
+`[time.ParseDuration](https://golang.org/pkg/time/#ParseDuration)` method will
+work.
+
+```sh
+poll -i 10s date
+```
