@@ -22,6 +22,7 @@ func main() {
 	args := flag.Args()
 
 	if len(args) == 0 {
+		fmt.Println("Usage: poll [flags] [command]")
 		return
 	}
 
