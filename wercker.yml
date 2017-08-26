@@ -37,6 +37,7 @@ build:
         name: metalinter
         code: |
           go get -u gopkg.in/alecthomas/gometalinter.v1
+          ls -l $GOPATH/bin
           $GOPATH/bin/gometalinter --install
           $GOPATH/bin/gometalinter ./...
 
