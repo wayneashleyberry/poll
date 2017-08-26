@@ -37,8 +37,8 @@ build:
         name: metalinter
         code: |
           go get -u gopkg.in/alecthomas/gometalinter.v1
-          gometalinter --install
-          gometalinter ./...
+          $GOPATH/bin/gometalinter --install
+          $GOPATH/bin/gometalinter ./...
 
     # Build the project
     - script:
