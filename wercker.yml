@@ -26,19 +26,19 @@ build:
     # at the right place in the workspace tree
     - setup-go-workspace
 
+    # Go Meta Linter
+    - script:
+      name: metalinter
+      code: |
+        go get -u github.com/alecthomas/gometalinter
+        $GOPATH/bin/gometalinter --install
+        $GOPATH/bin/gometalinter ./...
+
     # Gets the dependencies
     - script:
         name: go get
         code: |
           go get
-
-    # Go Meta Linter
-    - script:
-        name: metalinter
-        code: |
-          go get -u gopkg.in/alecthomas/gometalinter.v1
-          $GOPATH/bin/gometalinter.v1 --install
-          $GOPATH/bin/gometalinter.v1 ./...
 
     # Build the project
     - script:
