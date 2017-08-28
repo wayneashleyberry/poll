@@ -6,6 +6,8 @@
 
 ### Installation
 
+##### You have a working [Go environment](https://golang.org/doc/install).
+
 ```sh
 go get github.com/wayneashleyberry/poll
 ```
