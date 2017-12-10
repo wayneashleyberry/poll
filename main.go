@@ -37,7 +37,7 @@ func main() {
 			log.Fatal(err)
 		}
 
-		fmt.Fprintf(writer, string(output))
+		fmt.Fprint(writer, string(output))
 		time.Sleep(duration)
 	}
 }
