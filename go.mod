@@ -1,5 +1,8 @@
 module github.com/wayneashleyberry/poll
 
-go 1.12
+go 1.15
 
-require github.com/gosuri/uilive v0.0.3 // indirect
+require (
+	github.com/gosuri/uilive v0.0.4
+	github.com/mattn/go-isatty v0.0.12 // indirect
+)
