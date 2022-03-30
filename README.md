@@ -1,6 +1,7 @@
-[![Go Report Card](https://goreportcard.com/badge/github.com/wayneashleyberry/poll)](https://goreportcard.com/report/github.com/wayneashleyberry/poll)
 [![Go Reference](https://pkg.go.dev/badge/wayneashleyberry/poll.svg)](https://pkg.go.dev/wayneashleyberry/poll)
+[![Go Report Card](https://goreportcard.com/badge/github.com/wayneashleyberry/poll)](https://goreportcard.com/report/github.com/wayneashleyberry/poll)
 [![golangci-lint](https://github.com/wayneashleyberry/poll/actions/workflows/golangci-lint.yml/badge.svg)](https://github.com/wayneashleyberry/poll/actions/workflows/golangci-lint.yml)
+[![go](https://github.com/wayneashleyberry/poll/actions/workflows/go.yml/badge.svg)](https://github.com/wayneashleyberry/poll/actions/workflows/go.yml)
 
 > A command-line application to poll other command-line applications.
 
