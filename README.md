@@ -8,7 +8,7 @@
 ##### You have a working [Go environment](https://golang.org/doc/install).
 
 ```sh
-go get github.com/wayneashleyberry/poll
+go install github.com/wayneashleyberry/poll@latest
 ```
 
 ### Usage
